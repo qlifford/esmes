@@ -5,7 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LikeController;
+use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserPostController;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +31,8 @@ Route::get('posts/{post}', [PostController::class, 'show'])->name('posts_show');
 Route::post('posts', [PostController::class, 'store']);
 Route::delete('posts/{post}', [PostController::class, 'destroy'])->name('post_delete');
 
-Route::post('posts/{post}/likes', [LikeController::class, 'store'])->name('likes');
-Route::delete('posts/{post}/likes', [LikeController::class, 'destroy'])->name('likes');
+Route::post('posts/{post}/likes', [PostLikeController::class, 'store'])->name('likes');
+Route::delete('posts/{post}/likes', [PostLikeController::class, 'destroy'])->name('likes');
 
 Route::get('users/{user:username}/posts', [UserPostController::class, 'index'])->name('user_posts');
 

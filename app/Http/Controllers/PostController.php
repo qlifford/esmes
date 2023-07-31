@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Mail;
 
 
 class PostController extends Controller
@@ -14,6 +14,10 @@ class PostController extends Controller
         $posts = Post::with('user','likes')->orderBy('created_at', 'DESC')->paginate(10);
 
         return view('post.index')->with('posts', $posts);
+    }
+    public function __construct()
+    {
+        $this->middleware(['auth'])->only(['store', 'destroy']);
     }
     public function store(Request $request)
     {
