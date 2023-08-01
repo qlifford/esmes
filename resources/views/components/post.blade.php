@@ -7,7 +7,8 @@
         <form action="{{ route('post_delete', $post) }}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit" class="text-red-500 mr-1">Delete</button>
+            <button type="submit" class="text-red-500 mr-1" onclick="return confirm('{{ __('Are you sure you want to delete?') }}')">
+            {{ 'Delete' }}</button>
         </form>  
     @endcan                   
 

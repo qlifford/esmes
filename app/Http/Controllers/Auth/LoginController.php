@@ -28,9 +28,16 @@ class LoginController extends Controller
     {
         return back()->with('error', 'Invalid login credentials');
     }
-
     // redirect
-    return view('dashboard')->with('success', 'Login successful, Welcome!');;
+    else if(auth()->user()->role == 1)
+    {
+        return view('admin.index')->with('success', 'Welcome Super Admin');
+    }
+    else
+    {
+        return view('dashboard')->with('success', 'Login successful, Welcome!');
+    }
+
     }
 
 }

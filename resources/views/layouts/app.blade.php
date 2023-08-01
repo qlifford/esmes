@@ -13,6 +13,9 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
@@ -20,9 +23,15 @@
 </head>
 <body class="bg-gray-200">
     <nav class="p-6 bg-white flex justify-between mb-6">
+        <a href="/"><img src="{{ asset('assets/logo/navlogo.png') }}" style="width: 150px; height: 40px; object-fit: cover;" class="p-2" alt="TOPSCAN"></a>
+
         <ul class="flex items-center">
             <li class="p-2"><a href="/">Home</a></li>
             <li class="p-2"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="p-2"><a href="{{ route('product') }}">Products</a></li>
+            <li class="p-2"><a href="{{ route('service') }}">Services</a></li>
+            <li class="p-2"><a href="{{ route('contact') }}">Contact Us</a></li>
+            <li class="p-2"><a href="{{ route('portfolio') }}">Portfolio</a></li>
             <li class="p-2"><a href="{{ route('posts') }}">Blog</a></li>
         </ul>
         <ul class="flex items-center">

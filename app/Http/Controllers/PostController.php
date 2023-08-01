@@ -41,6 +41,6 @@ class PostController extends Controller
         $this->authorize('delete', $post);
         $post->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'You deleted a post');
     }
 }
